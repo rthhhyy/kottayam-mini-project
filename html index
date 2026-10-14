@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Book Nook | Reading Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">b.</span> book nook
+    </a>
+    <span class="top-note">● your personal library</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A LITTLE SPACE FOR BIG STORIES</p>
+        <h1>Every book has<br>a <em>place here.</em></h1>
+        <p class="sub">
+          Keep the stories you love close, and the ones
+          you're about to discover even closer.
+        </p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="sun"></div>
+        <i class="book b1"></i>
+        <i class="book b2"></i>
+        <i class="book b3"></i>
+        <i class="plant">♧</i>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article>
+        <small>IN YOUR LIBRARY</small>
+        <strong id="total-count">0</strong>
+        <span>books collected</span>
+      </article>
+      <article>
+        <small>CURRENTLY READING</small>
+        <strong id="reading-count">0</strong>
+        <span>stories in progress</span>
+      </article>
+      <article>
+        <small>FINISHED</small>
+        <strong id="finished-count">0</strong>
+        <span>worlds explored</span>
+      </article>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">MAKE ROOM FOR A NEW STORY</p>
+      <h2>Add a book <span>✳</span></h2>
+
+      <form id="book-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="title">Book title <b>*</b></label>
+            <input id="title" name="title"
+              maxlength="180"
+              placeholder="e.g. Aadujeevitham"
+              required
+              aria-describedby="title-error">
+            <small class="error" id="title-error"
+              aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="author">Author <b>*</b></label>
+            <input id="author" name="author"
+              maxlength="120"
+              placeholder="e.g. Benyamin"
+              required
+              aria-describedby="author-error">
+            <small class="error" id="author-error"
+              aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="status">Reading status</label>
+            <select id="status" name="status">
+              <option>To read</option>
+              <option>Reading</option>
+              <option>Finished</option>
+            </select>
+          </div>
+
+          <button class="add" type="submit">
+            ＋ Add to library
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="library">
+      <div class="lib-head">
+        <div>
+          <p class="eyebrow">YOUR NEXT CHAPTER</p>
+          <h2>My library
+            <span class="pill" id="visible-count">0</span>
+          </h2>
+        </div>
+
+        <label class="search">
+          ⌕
+          <input id="search" type="search"
+            placeholder="Search books or authors…"
+            aria-label="Search books by title or author">
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+      <nav class="filters" aria-label="Filter books">
+        <button class="filter active" data-filter="All"
+          aria-pressed="true">
+          All books <span id="all-count">0</span>
+        </button>
+        <button class="filter" data-filter="To read"
+          aria-pressed="false">
+          To read <span id="todo-count">0</span>
+        </button>
+        <button class="filter" data-filter="Reading"
+          aria-pressed="false">
+          Reading <span id="reading-filter-count">0</span>
+        </button>
+        <button class="filter" data-filter="Finished"
+          aria-pressed="false">
+          Finished <span id="finished-filter-count">0</span>
+        </button>
+      </nav>
+
+      <div id="book-list" class="book-list"
+        aria-live="polite"></div>
+
+      <div id="empty-state" class="empty">
+        <div class="empty-icon">✳</div>
+        <h3 id="empty-title">
+          Your next favourite is out there.
+        </h3>
+        <p id="empty-copy">
+          Add the first book to start building your little library.
+        </p>
+        <button id="empty-add" class="text-button">
+          ＋ Add your first book
+        </button>
+      </div>
+
+      <p class="storage-note">
+        ↳ Your library is saved on this device automatically.
+      </p>
+    </section>
+
+    <footer>
+      <span>Made for the love of reading.</span>
+      <b>book nook ✳</b>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast"
+    role="status" aria-live="polite"></div>
+</body>
+</html>
