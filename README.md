@@ -1,177 +1,148 @@
+# 📚 Book Nook — Book Tracker
 
-# 📚 Book Nook — My Reading Tracker
-
-A simple, responsive web app for organizing the books you want to read, are currently reading, or have finished.
-
-Book Nook is built with plain HTML, CSS, and JavaScript. No frameworks, database, or build tools are required.
+Book Nook is a simple, user-friendly web application that helps you organize your personal reading list. Add books, track your reading progress, search your library, and manage your books in one place.
 
 ## ✨ Features
 
-- **Add books:** Enter a book title, author, and reading status.
-- **Input validation:** Title and author are required, with clear error messages.
-- **Reading statuses:** Organize books into To read, Reading, and Finished.
-- **Search:** Find books by title or author with case-insensitive matching.
-- **Status filters:** View all books or filter by reading status.
-- **Live statistics:** See your total books, currently reading books, and finished books.
-- **Persistent storage:** Automatically save your library in the browser using `localStorage`.
-- **Delete books:** Remove books from your reading list.
-- **Newest first:** Newly added books appear at the top of the list.
-- **Responsive design:** Use the app on desktop, tablet, and mobile screens.
-- **Accessible feedback:** Form errors and status notifications help users understand their actions.
+- **Add Books:** Add a book with its title and author.
+- **Track Reading Status:** Organize books into three categories:
+  - To read
+  - Reading
+  - Finished
+- **Search Books:** Quickly find books by title or author.
+- **Filter Your Library:** View all books or filter by reading status.
+- **Reading Statistics:** See your total books, books currently being read, and finished books.
+- **Update Book Status:** Change a book’s status whenever your reading progress changes.
+- **Delete Books:** Remove books from your library when needed.
+- **Form Validation:** Get helpful messages when required information is missing.
+- **Automatic Local Storage:** Your book list is saved in your browser, so it remains available after refreshing the page in the same browser.
+- **Responsive Design:** Use the application on desktop, tablet, and mobile screens.
 
-## 🛠️ Built With
+## 🛠️ Technologies Used
 
-- HTML5 — page structure and form elements
-- CSS3 — styling, responsive layouts, and visual effects
-- Vanilla JavaScript — app logic, search, filtering, and data management
-- Browser `localStorage` — saving books between visits
-- Google Fonts — DM Sans and Playfair Display
+- HTML5
+- CSS3
+- JavaScript
+- Browser Local Storage
+- Visual Studio Code
+- Git and GitHub
 
-## 📁 Project Structure
+## 📋 Requirements
 
-```text
-kottayam-mini-project/
-├── index.html    # Main page and book form
-├── style.css     # Layout, colors, and responsive styling
-├── app.js        # Book management and localStorage
-├── README.md     # Project documentation
-└── PROMPTS.md    # Development prompts and testing log
+Before running the project, make sure you have:
+
+1. [Visual Studio Code](https://code.visualstudio.com/)
+2. [Git for Windows](https://git-scm.com/install/windows)
+3. A modern web browser, such as Chrome, Edge, or Firefox
+
+## 🚀 How to Open the Project in VS Code
+
+### Step 1: Open the Terminal
+
+Open Visual Studio Code, then select **Terminal → New Terminal** from the menu.
+
+### Step 2: Check Git Installation
+
+Run:
+
+```powershell
+git --version
 ```
 
-## 🚀 Getting Started
+If a Git version appears, continue to the next step. If Git is not recognized, install it from [Git for Windows](https://git-scm.com/install/windows), then restart VS Code.
 
-### Option 1: Run locally
+### Step 3: Clone the GitHub Repository
 
-1. Clone or download this repository.
-2. Make sure `index.html`, `style.css`, and `app.js` are in the same folder.
-3. Open `index.html` in a modern web browser.
+If you have not downloaded the repository to your computer, run:
 
-```bash
+```powershell
+cd $HOME
 git clone https://github.com/rthhhyy/kottayam-mini-project.git
+```
+
+### Step 4: Enter the Project Folder
+
+```powershell
 cd kottayam-mini-project
 ```
 
-Then open `index.html` in your browser.
+### Step 5: Open the Project in VS Code
 
-### Option 2: Use VS Code
-
-1. Open the project folder in Visual Studio Code.
-2. Open `index.html`.
-3. Run it with a local development server, such as the Live Server extension.
-
-A local server is recommended for consistent browser behavior, but no compilation or package installation is needed.
-
-### Option 3: Publish with GitHub Pages
-
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under the build and deployment section, choose **Deploy from a branch**.
-4. Select your default branch (usually `main`) and the root folder (`/`).
-5. Save the settings and wait for deployment.
-6. Open the published URL shown in the Pages settings.
-
-Ensure that `index.html`, `style.css`, and `app.js` are committed to the selected branch.
-
-## 📖 How to Use
-
-1. Enter a book title.
-2. Enter the author's name.
-3. Choose a reading status.
-4. Click **Add book**.
-5. Use the search box to find books by title or author.
-6. Select a status filter to narrow down your library.
-7. Change a book's status as you make progress.
-8. Delete books you no longer want to track.
-
-Your statistics update as books are added, updated, or deleted.
-
-## 💾 How Data Is Stored
-
-Book Nook uses the browser's `localStorage` API to save the book list under this key:
-
-```text
-book-nook-books-v1
+```powershell
+code .
 ```
 
-The stored data includes each book's:
+If `code .` is not recognized, open VS Code and select **File → Open Folder**, then choose the `kottayam-mini-project` folder.
 
-- Unique ID
-- Title
-- Author
-- Reading status
-- Creation timestamp
+## ▶️ How to Run the Website
 
-### Important storage details
+### Option 1: Open Directly in Your Browser
 
-- Data remains available after refreshing or reopening the app in the same browser profile.
-- Data is local to the browser and site origin. It does not automatically sync across devices or browsers.
-- Clearing site data or browser storage can delete your saved books.
-- Opening the app under a different origin, hostname, or port creates a separate storage area.
-- The app does not require a user account or send book data to a backend server.
-- If browser storage is unavailable or full, saving changes may fail and the app will show an error notification.
+In the VS Code terminal, make sure you are inside the project folder, then run:
 
-## 🧪 Manual Testing Checklist
+```powershell
+start index.html
+```
 
-Use the following checklist to verify the main features.
+This opens the website in your default browser.
 
-| Test | Action | Expected result |
-|---|---|---|
-| Empty form | Submit without a title or author | Required-field errors appear |
-| Add a book | Enter a title and author, then submit | The book appears in the list |
-| Default status | Add a book using the default status | It appears under To read |
-| Newest first | Add two books one after the other | The newest book appears first |
-| Search by title | Search for part of a title | Matching books appear |
-| Search by author | Search for an author's name | Matching books appear |
-| Case-insensitive search | Search using different capitalization | The same matching books appear |
-| Filter by status | Select Reading or Finished | Only books with that status appear |
-| Update status | Change a book's status | Its status and statistics update |
-| Delete a book | Click Delete on a book | The book disappears and counts update |
-| Persist data | Add a book and refresh the page | The saved book remains visible |
-| Empty state | Search for a nonexistent book | A no-matching-books message appears |
-| Mobile layout | Open the app at a narrow viewport | Form and book cards adapt to the screen |
+### Option 2: Run Using a Local Server
 
-## 🔧 Troubleshooting
+If Python is installed, run:
 
-### Books disappear after refreshing
+```powershell
+python -m http.server 8000
+```
 
-- Check that browser storage is enabled.
-- Make sure you are using the same browser profile and site origin.
-- Check the browser console for storage-related errors.
+Then open this address in your browser:
 
-### CSS or JavaScript changes do not appear
+http://localhost:8000
 
-- Confirm the filenames are exactly `style.css` and `app.js`.
-- Confirm `index.html` references both files correctly.
-- Refresh the page or clear the browser cache if necessary.
-- Check the browser developer console for errors.
+To stop the server, return to the terminal and press **Ctrl + C**.
 
-### Search returns no results
+## 📁 Project Structure
 
-- Clear the search field and try again.
-- Check that the title or author is spelled correctly.
-- Select **All** to remove status filtering.
+Make sure the following files are in the same project folder:
 
-## 🔒 Privacy
+```text
+kottayam-mini-project/
+├── index.html
+├── style.css
+├── app.js
+├── README.md
+└── PROMPTS.md
+```
 
-This project has no backend, login system, or external database. Book information is stored locally in the browser through `localStorage`.
+- `index.html` — Contains the webpage structure.
+- `style.css` — Controls the design, colors, layout, and responsive styling.
+- `app.js` — Handles adding, searching, filtering, updating, deleting, and saving books.
+- `README.md` — Provides project information and setup instructions.
+- `PROMPTS.md` — Documents development prompts and manual testing steps.
 
-Google Fonts may require an internet connection to load the chosen fonts. The app's core functionality does not require a third-party JavaScript library.
+**Important:** The website will not display correctly if `style.css` or `app.js` is missing or saved under a different filename. Make sure all required files are present in the same folder.
 
-## 🌱 Future Improvements
+## 💾 How Book Data Is Saved
 
-Possible enhancements include:
+Book Nook uses your browser's Local Storage to save your reading list. Data is stored locally in the browser on your computer.
 
-- Book cover images
-- Reading goals and progress tracking
-- Sorting by title or author
-- Exporting and importing a book list
-- Optional cloud synchronization
-- Automated tests
+- Refreshing the page does not normally remove your saved books.
+- Your books are not automatically synced between different browsers or computers.
+- Clearing the browser's site data may delete your saved books.
 
-## 📄 License
+## 🧪 Basic Testing Checklist
 
-This project is intended as a small learning project. Add a license file if you plan to distribute or reuse it under specific terms.
+- Add a book with a title and author.
+- Try submitting the form with a missing title or author.
+- Search for a book by title and author.
+- Filter books by reading status.
+- Change a book's status and check the statistics.
+- Delete a book and verify the updated list.
+- Refresh the page and confirm that saved books remain.
 
----
+## 🎯 Project Goal
 
-Made with 📚 and a love of reading.
+The goal of Book Nook is to provide a simple and attractive way to maintain a personal reading list, monitor reading progress, and encourage consistent reading habits.
+
+## 👨‍💻 Author
+
+Developed as a mini project using HTML, CSS, and JavaScript.
