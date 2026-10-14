@@ -146,3 +146,17 @@ The goal of Book Nook is to provide a simple and attractive way to maintain a pe
 ## 👨‍💻 Author
 
 Developed as a mini project using HTML, CSS, and JavaScript.
+## 🧪 Testing Results
+
+- ✅ Add books with a title and author.
+- ✅ Validate missing title or author.
+- ✅ Search books by title and author.
+- ✅ Filter books by reading status.
+- ✅ Update a book's reading status.
+- ✅ Verify reading statistics update correctly.
+- ✅ Delete books from the library.
+- ✅ Reload the browser and confirm saved books remain visible.
+- ✅ Confirm updated reading statuses persist after reloading.
+- ✅ Verify the application works as expected.
+
+**Result:** All listed manual tests passed successfully.
